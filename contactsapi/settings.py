@@ -46,11 +46,13 @@ INSTALLED_APPS = [
     'drf_yasg',
     'authentication',
     'contacts',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -128,6 +130,11 @@ REST_FRAMEWORK = {
         'authentication.backends.JWTAuthentication',
     )
 }
+
+#cors policy config
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:3000"
+]
 
 # JWT
 JWT_SECRET_KEY= os.environ.get('JWT_SECRET_KEY')
