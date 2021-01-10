@@ -23,9 +23,9 @@ schema_view = get_schema_view(
    openapi.Info(
       title="Contact List API",
       default_version='v1',
-      description="Test description",
+      description="A demo API to show working knowledge of Django rest Framework",
       terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="contact@snippets.local"),
+      contact=openapi.Contact(email="ogunwedeemmanuel@gmail.com"),
       license=openapi.License(name="BSD License"),
    ),
    public=True,
