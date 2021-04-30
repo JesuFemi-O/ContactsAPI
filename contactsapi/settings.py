@@ -30,7 +30,7 @@ SECRET_KEY = 'm9kbuo3*9@2+yp6qd%v9^k!79jj43*%#v65id08h+fp^-pows1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -126,24 +126,25 @@ USE_TZ = True
 
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES':(
+    'DEFAULT_AUTHENTICATION_CLASSES': (
         'authentication.backends.JWTAuthentication',
     )
 }
 
-#cors policy config
+# cors policy config
 CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:3000"
+    "http://127.0.0.1:3000",
+    "http://localhost:5434"
 ]
 
 # JWT
-JWT_SECRET_KEY= os.environ.get('JWT_SECRET_KEY')
+JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
 
 
-#Documentation Congfig
+# Documentation Congfig
 
-SWAGGER_SETTINGS= {
-    'SECURITY_DEFINITIONS':{
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
         "Auth Token eg [Bearer (JWT) ]": {
             "type": "apiKey",
             "name": "Authorization",
@@ -157,5 +158,5 @@ SWAGGER_SETTINGS= {
 
 STATIC_URL = '/static/'
 
-#deployment ishh
+# deployment ishh
 django_heroku.settings(locals())
